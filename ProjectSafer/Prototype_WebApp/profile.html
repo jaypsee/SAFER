@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Profile - PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">	
+		<link rel="stylesheet" href="assets/css/style2.css">		
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo">
+						<img src="assets/img/logo_pup.jpg" width="65" height="40" alt="">
+					</a>
+                </div>           
+                <div class="page-title-box pull-left">
+					<h3 onclick ="launchFullScreen(document.documentElement);">Smart Building Management System</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">5</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> accessed door at the <span class="noti-title">Computer Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the configuration of a device at <span class="noti-title">Office 1</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> posted a new <span class="noti-title">Blog Post</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> turned on electricity at <span class="noti-title">Room 201</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> activated alarm at the <span class="noti-title">Kitchen Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="notifications.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">1</span></a>
+					</li>		
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>							
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>					
+				</ul>
+            </div>
+			<div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul><br>
+                            <li>  
+                                <a id="clock" class="clock"></a>
+							</li><br>
+							<li> 
+								<a href="index.html"> Dashboard </a>
+							</li>
+							<li class="submenu">
+								<a href="#"><span> Safety & Security</span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="acs.html"> Access Control </a></li>
+									<li><a href="cctv.html"> CCTV Surveillance</a></li>
+									<li><a href="fdas.html"> Fire Detection & Alarm </a></li>
+									<li><a href="env.html"> Environment Monitoring </a></li>
+								</ul>
+							<li class="submenu">
+								<a href="#"><span> Resource Management </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="schedule.html"> Schedule</a></li>									
+									<li><a href="ems.html"> Energy</a></li>
+									<li><a href="facilities.html"> Facilities</a></li>									
+                                    <li><a href="control-panel.html"> Control Panel </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><span> Communications </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+									<li><a href="notifications.html"> Notifications <span class="badge bg-primary pull-right">5</span></a></li>
+									<li><a href="alerts.html"> Alerts </a></li>
+									<li><a href="home.html"> Homepage </a></li>									
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><span> Reports & Analytics </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="user-act.html"> Users Activity Logs<span class="badge bg-primary pull-right">5</span></a></li>
+									<li><a href="sys-events.html"><span> Systems Event Logs</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><span> Configurations </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="users.html"> Users </a></li>
+									<li><a href="assets.html"> Assets </a></li>
+								</ul>
+							</li>							
+						</ul>
+					</div>
+                </div>
+			</div>			
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<h4 class="page-title">User Profile</h4>                                                                
+						</div>
+						<div class="col-xs-20 text-right m-b-20">
+                            <form action="#" method="post" id="demoForm" class="demoForm">
+                                <fieldset>
+                                    <select name="area" class="textSelect">
+                                        <option value="Default">[Area]</option>
+                                        <option value="Area1">Gnd Flr</option>
+                                        <option value="Area2">2nd Flr</option>
+                                        <option value="Area3">3rd Flr</option>
+                                        <option value="Area4">4th Flr</option>
+                                        <option value="AreaEtc">Other Areas</option>                                                                 
+                                    </select>
+                                    <select name="facility" id="facility" class="textSelect" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+                                        <!-- populated using JavaScript -->
+                                    </select>                                    
+                                    <a href="alerts.html" class="button" style="margin-left:2em;">Alerts</a>&nbsp;
+							        <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>                                             
+                                </fieldset>                       
+                            </form>
+						</div>                        
+					</div><br>
+					<div class="card-box">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="profile-view">
+									<div class="profile-img-wrap">
+										<div class="profile-img">
+											<a href="#"><img class="avatar" src="assets/img/user-03.jpg" alt=""></a>
+										</div>
+									</div>
+									<div class="profile-basic">
+										<div class="row">
+											<div class="col-md-5">
+												<div class="profile-info-left">
+													<h3 class="user-name m-t-0 m-b-0">John Doe</h3>
+													<small class="text-muted">System Admin</small>
+													<div class="staff-id">Employee ID : <a href="#">202050002000</a></div>
+													<div class="staff-id">Card ID : <a href="#">100010002000</a></div>													
+													<div class="staff-msg">
+													<a href="edit-profile.html" class="btn btn-primary">Edit Profile</a>
+													<a href="chat.html" class="btn btn-primary">Send Message</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-7">
+												<ul class="personal-info">
+													<li>
+														<span class="title">Status:</span>
+														<span class="text"><a href="#">Active</a></span>
+													</li>
+													<li>
+														<span class="title">Phone:</span>
+														<span class="text"><a href="#">09110000111</a></span>
+													</li>
+													<li>
+														<span class="title">Email:</span>
+														<span class="text"><a href="#">johndoe@example.com</a></span>
+													</li>
+													<li>
+														<span class="title">Person to Contact:</span>
+														<span class="text"><a href="#">Jean Doe</a></span>
+													</li>
+													<li>
+														<span class="title">Emergency Contact No.:</span>
+														<span class="text"><a href="#">09110000222</a></span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group form-focus">					 						   
+							<div class="col-sm-6 col-md-4 col-xs-12">  
+								<input type="text" onfocus="this.placeholder=''" class="textSelect" style="width:100%; height:35px;" id="searchKeyword" onkeyup="searchFunction()" placeholder="Search keyword...">
+							</div>		      				     
+							<div class="col-sm-1 col-md-1 col-xs-1">  							
+								<button class="buttonOptions"></i>
+									<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+									<ul class="dropdown-menu pull-right">
+										<li><a href="#">Add New</a></li>
+										<li><a href="#">Import</a></li>
+										<li><a href="#">Export</a></li>
+									</ul>
+								</button>								
+							</div>
+					   	</div>           					    					   
+					</div>				
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table m-b-0 datatable">
+									<thead>
+										<tr>
+											<th id="filterID">ID</th>
+											<th id="filterFacility">Facility</th>
+											<th id="filterAccessType">Access Type</th>
+											<th id="filterLogStart">Log Start</th>
+											<th id="filterLogEnd">Log End</th>
+											<th id="filterRemarks">Remarks</th>											
+										</tr>
+									</thead>
+									<tbody class="searchable">
+										<tr>
+											<td>200805-0001B</td>
+											<td>Rm401</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>7:25</small></td>
+											<td><span>5 Aug 2020</span><br><small>7:25</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0002B</td>
+											<td>Office6</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>7:30</small></td>
+											<td><span>5 Aug 2020</span><br><small>16:15</small></td>											
+											<td>Admin Access Mode</td>
+										</tr>
+										<tr>
+											<td>200805-0003C</td>
+											<td>Rm401</td>
+											<td>Timekeeping</td>
+											<td><span>5 Aug 2020</span><br><small>7:30</small></td>
+											<td><span>5 Aug 2020</span><br><small>16:40</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0004B</td>
+											<td>Office2</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>11:15</small></td>
+											<td><span>5 Aug 2020</span><br><small>11:15</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0005B</td>
+											<td>Office2</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>14:40</small></td>
+											<td><span>5 Aug 2020</span><br><small>14:41</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0006D</td>
+											<td>Rm401</td>
+											<td>Electricity Access</td>
+											<td><span>5 Aug 2020</span><br><small>15:40</small></td>
+											<td><span>5 Aug 2020</span><br><small>15:51</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0007C</td>
+											<td>Rm401</td>
+											<td>Timekeeping</td>
+											<td><span>5 Aug 2020</span><br><small>15:42</small></td>
+											<td><span>5 Aug 2020</span><br><small>19:16</small></td>										
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0008B</td>
+											<td>Rm201</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>16:30</small></td>
+											<td><span>5 Aug 2020</span><br><small>20:14</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0009C</td>
+											<td>Rm302</td>
+											<td>Electricity Access</td>
+											<td><span>5 Aug 2020</span><br><small>7:30</small></td>
+											<td><span>5 Aug 2020</span><br><small>16:40</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200805-0010B</td>
+											<td>Rm201</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>16:45</small></td>
+											<td><span>5 Aug 2020</span><br><small>21:15</small></td>											
+											<td>Admin Access Mode</td>
+										</tr>
+										<tr>
+											<td>200806-0001B</td>
+											<td>Office6</td>
+											<td>Door Access</td>
+											<td><span>5 Aug 2020</span><br><small>6:45</small></td>
+											<td><span>5 Aug 2020</span><br><small>18:31</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0002B</td>
+											<td>Rm401</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>7:30</small></td>
+											<td><span>6 Aug 2020</span><br><small>16:15</small></td>											
+											<td>Admin Access Mode</td>
+										</tr>
+										<tr>
+											<td>200806-0003C</td>
+											<td>Rm401</td>
+											<td>Timekeeping</td>
+											<td><span>6 Aug 2020</span><br><small>7:35</small></td>
+											<td><span>6 Aug 2020</span><br><small>16:44</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0004B</td>
+											<td>Rm306</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>9:25</small></td>
+											<td><span>6 Aug 2020</span><br><small>9:26</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0005B</td>
+											<td>Rm404</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>9:25</small></td>
+											<td><span>6 Aug 2020</span><br><small>15:37</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0006B</td>
+											<td>Rm306</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>9:28</small></td>
+											<td><span>6 Aug 2020</span><br><small>19:30</small></td>											
+											<td></td>
+										</tr>										
+										<tr>
+											<td>200806-0007D</td>
+											<td>Rm404</td>
+											<td>Electricity Access</td>
+											<td><span>6 Aug 2020</span><br><small>13:40</small></td>
+											<td><span>6 Aug 2020</span><br><small>15:28</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0008B</td>
+											<td>Rm201</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>16:45</small></td>
+											<td><span>6 Aug 2020</span><br><small>21:15</small></td>											
+											<td>Admin Access Mode</td>
+										</tr>
+										<tr>
+											<td>200806-0009C</td>
+											<td>Rm201</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>16:45</small></td>
+											<td><span>6 Aug 2020</span><br><small>21:15</small></td>											
+											<td>Admin Access Mode</td>
+										</tr>
+										<tr>
+											<td>200806-0010F</td>
+											<td>Rm201</td>
+											<td>Alarm Access</td>
+											<td><span>6 Aug 2020</span><br><small>16:45</small></td>
+											<td><span>6 Aug 2020</span><br><small>21:15</small></td>											
+											<td>Emergency Mode</td>
+										</tr>										
+										<tr>
+											<td>200806-0011C</td>
+											<td>Rm401</td>
+											<td>Timekeeping</td>
+											<td><span>6 Aug 2020</span><br><small>15:42</small></td>
+											<td><span>6 Aug 2020</span><br><small>19:16</small></td>										
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0012B</td>
+											<td>Rm201</td>
+											<td>Door Access</td>
+											<td><span>6 Aug 2020</span><br><small>16:30</small></td>
+											<td><span>6 Aug 2020</span><br><small>20:14</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0013D</td>
+											<td>Rm302</td>
+											<td>Electricity Access</td>
+											<td><span>6 Aug 2020</span><br><small>7:30</small></td>
+											<td><span>6 Aug 2020</span><br><small>16:40</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0014B</td>
+											<td>Rm201</td>
+											<td>Water Access</td>
+											<td><span>6 Aug 2020</span><br><small>16:45</small></td>
+											<td><span>6 Aug 2020</span><br><small>20:15</small></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>200806-0015J</td>
+											<td>Rm201</td>
+											<td>Homepage Content</td>
+											<td><span>6 Aug 2020</span><br><small>20:15</small></td>
+											<td><span>6 Aug 2020</span><br><small>20:18</small></td>											
+											<td>New Blog Posted</td>
+										</tr>
+									</tbody>								
+								</table>
+							</div>
+						</div>
+					</div>
+                </div>
+				<div class="notification-box">
+					<div class="msg-sidebar notifications msg-noti">
+						<div class="topnav-dropdown-header">
+							<span>Messages</span>
+						</div>
+						<div class="drop-scroll msg-list-scroll">
+							<ul class="list-box">
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Richard Miles </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item new-message">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">John Doe</span>
+												<span class="message-time">1 Aug</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Tarah Shropshire </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Mike Litorus</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Catherine Manseau </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">D</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Domenic Houston </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">B</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Buster Wigton </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Rolland Webber </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Claire Mapes </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Melita Faucher</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Jeffery Lalor</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Loren Gatlin</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Tarah Shropshire</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="chat.html">See all messages</a>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div id="edit_user" class="modal custom-modal fade" role="dialog">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-content modal-lg">
+						<div class="modal-header">
+							<h4 class="modal-title">Edit User</h4>
+						</div>
+						<div class="modal-body">
+							<form class="m-b-30">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">First Name <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="John">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Last Name</label>
+											<input class="form-control" type="text" value="Doe" >
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">User ID <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="202050002000">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Card No.  <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="100010002000">
+										</div>
+									</div>									
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Email<span class="text-danger">*</span></label>
+											<input class="form-control" type="email" value="	johndoe@example.com">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Phone </label>
+											<input class="form-control" type="text" value="09110000111">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Password</label>
+											<input class="form-control" type="password" value="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Confirm Password</label>
+											<input class="form-control" type="password">
+										</div>
+									</div>
+									<div class="col-md-6">  
+										<div class="form-group">
+											<label class="control-label">Gender <span class="text-danger">*</span></label>
+											<select class="select">
+												<option value="0">Male</option>
+												<option value="1">Female</option>
+											</select>
+										</div>
+								   </div>
+									<div class="col-md-6">  
+										<div class="form-group">
+											<label class="control-label">Birth Date</label>
+											<div class="cal-icon"><input class="form-control floating datetimepicker" type="text" value="02/12/1980"></div>
+										</div>										
+								   </div>
+									<div class="col-md-6">  
+										<div class="form-group">
+											<label class="control-label">Person to Contact in Case of Emergency <span class="text-danger">*</span></label>
+											<input type="text" class="form-control floating" value="Jean Doe">
+										</div>
+								   </div>
+									<div class="col-md-6">  
+										<div class="form-group">
+											<label class="control-label">Emergency Contact No. <span class="text-danger">*</span></label>
+											<input type="text" class="form-control floating" value="09110000222">
+										</div>
+								   </div>								   								  							    
+								</div><br><br>
+								<div class="row">
+									<div class="col-md-12">
+										<h5 class="modal-title">Access Settings</h5>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Access Type</label>
+											<select class="select">
+												<option value="1">System Admin</option>
+												<option value="2">Building Admin</option>
+												<option value="3">Building Staff</option>
+												<option value="4">Faculty Admin</option>
+												<option value="5">Faculty Member</option>
+												<option value="6">Student</option>
+												<option value="7">Guest</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Status</label>
+											<select class="select">							
+												<option value="1">Active</option>
+												<option value="0">Inactive</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="table-responsive m-t-15">	
+									<table class="table table-striped custom-table">
+										<thead>
+											<tr>
+												<th>Module Permission</th>
+												<th class="text-center">View</th>
+												<th class="text-center">Write</th>
+												<th class="text-center">Create</th>
+												<th class="text-center">Delete</th>
+												<th class="text-center">Import</th>
+												<th class="text-center">Export</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Safety & Security</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+											</tr>
+											<tr>
+												<td>Resource Management</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+											</tr>
+											<tr>
+												<td>Communication</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+											</tr>
+											<tr>
+												<td>Reports & Analytics</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+											</tr>
+											<tr>
+												<td>Configurations</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+												<td class="text-center">
+													<input checked="" type="checkbox">
+												</td>
+											</tr>											
+										</tbody>
+									</table>
+								</div>
+								<div class="m-t-20 text-center">
+									<button class="btn btn-primary">Save</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="assets/js/form2.js"></script>
+    </body>
+</html>

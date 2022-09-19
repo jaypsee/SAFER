@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Control - PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo"><img src="assets/img/logo_pup.jpg" width="65" height="40" alt=""></a>
+                </div>
+                <div class="page-title-box pull-left">
+					<h3>PUPPQ Building Management System</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">3</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="activities.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="activities.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="activities.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="activities.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="activities.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="activities.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">8</span></a>
+					</li>	
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>
+							<li><a href="settings.html">Settings</a></li>
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>
+            </div>
+			<div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li> 
+								<a href="index.html"> Dashboard </a>
+							</li>
+							<li class="submenu">
+								<a href="#"><span> Safety & Security</span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="acs.html"> Access Control </a></li>
+									<li><a href="cctv.html"> CCTV </a></li>
+									<li><a href="fdas.html"> Fire Detection & Alarm </a></li>
+									<li><a href="env.html"> Environment Monitoring </a></li>
+								</ul>
+							<li class="submenu">
+								<a href="#"><span> Resource Management </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="facilities.html"> Facilities </a></li>
+									<li><a href="electrical.html"> Electrical </a></li>
+									<li><a href="gas-water.html"> Gas & Water </a></li>
+									<li><a href="inventory.html"> Inventory </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><span> Communications </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="schedules.html"> Schedules </a></li>
+									<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+									<li><a href="cms.html"> CMS </a></li>
+									<li><a href="alerts.html"> Alerts </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><span> Reports & Analytics </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="ems.html"> EMS </a></li>
+									<li><a href="logistics.html"> Logistics </a></li>
+									<li><a href="events.html"><span> Events </span> <span class="badge bg-primary pull-right">1</span></a></li>
+									<li><a href="sensors.html"> Sensor Data </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><span> Configurations </span> <span class="menu-arrow"></span></a>
+								<ul class="list-unstyled" style="display: none;">
+									<li><a href="users.html"> Users </a></li>
+									<li><a href="assets.html"> Assets </a></li>
+									<li><a href="modules.html"> Modules </a></li>
+									<li><a href="links.html"> Links </a></li>
+								</ul>
+							</li>							
+						</ul>
+					</div>
+                </div>
+			</div>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-4">
+							<h4 class="page-title">Supervisory Control Panel</h4>
+                        </div>
+						<div class="col-xs-8 text-right m-b-20">
+                            <a href="alerts.html" class="button">Alerts</a><a>&nbsp</a>
+                            <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>
+						</div>
+                    </div>			
+
+					<div class="row">
+						<div class="col-md-4">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table m-b-0 datatable">
+										<thead>
+											<tr>
+												<th>Facility</th>
+												<th class="text-center">Area</th>
+												<th class="text-right">Status</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown action-label">
+														<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i>
+														</a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+															<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown">
+														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#" title="Edit" data-toggle="modal" data-target="#edit_todaywork"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+															<li><a href="#" title="Delete" data-toggle="modal" data-target="#delete_workdetail"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>											
+										</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table m-b-0 datatable">
+										<thead>
+											<tr>
+												<th>Facility</th>
+												<th class="text-center">Area</th>
+												<th class="text-right">Status</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown action-label">
+														<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i>
+														</a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+															<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown">
+														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#" title="Edit" data-toggle="modal" data-target="#edit_todaywork"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+															<li><a href="#" title="Delete" data-toggle="modal" data-target="#delete_workdetail"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>											
+										</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table m-b-0 datatable">
+										<thead>
+											<tr>
+												<th>Facility</th>
+												<th class="text-center">Area</th>
+												<th class="text-right">Status</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown action-label">
+														<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i>
+														</a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+															<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>Computer Laboratory</td>
+												<td class="text-center">4F</td>
+												<td class="text-right">
+													<div class="dropdown">
+														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="#" title="Edit" data-toggle="modal" data-target="#edit_todaywork"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+															<li><a href="#" title="Delete" data-toggle="modal" data-target="#delete_workdetail"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>											
+										</tbody>
+								</table>
+							</div>
+						</div>						
+
+										
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<style>
+            /* Style the tab */
+            .tab {
+              overflow: hidden;
+              border: 1px solid #ccc;
+              background-color: #f1f1f1;
+            }
+        
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+              background-color: inherit;
+              float: left;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              transition: 0.3s;
+            }
+        
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+              background-color: #ddd;
+            }
+        
+            /* Create an active/current tablink class */
+            .tab button.active {
+              background-color: #ccc;
+            }
+
+            .tab button.visited {
+              background-color: inherit;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+              display: none;
+              padding: 6px 12px;
+              border: 1px solid #ccc;
+              border-top: none;
+            }
+        </style>
+        
+        <style>
+                /* The switch - the box around the slider */
+                .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                }
+
+                /* Hide default HTML checkbox */
+                .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+                }
+
+                /* The slider */
+                .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                }
+
+                .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                }
+
+                input:checked + .slider {
+                background-color: #2196F3;
+                }
+
+                input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+                }
+
+                input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+                }
+
+                /* Rounded sliders */
+                .slider.round {
+                border-radius: 34px;
+                }
+
+                .slider.round:before {
+                border-radius: 50%;
+                }
+
+            h1 {
+            text-align: center;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #06D85F;
+            margin: 80px 0;
+            }
+
+            .box {
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.2);
+            padding: 35px;
+            border: 2px solid #fff;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+            }
+
+            .button {
+            font-size: 1em;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+            background: #0684d8;
+            }
+            .button:hover {
+            background: #0b37b3;
+            }
+
+            .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+            }
+            .overlay:target {
+            visibility: visible;
+            opacity: 1;
+            }
+
+            .popup {
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 75%;
+            height: 75%;
+            position: relative;
+            transform: translate(11%, 10%);
+
+                .popup h2 {
+                margin-top: 0;
+                color: #333;
+                font-family: Tahoma, Arial, sans-serif;
+                }
+
+                .popup .content {
+                max-height: 30%;
+                overflow: auto;
+                }
+            } 
+        </style>
+    </body>

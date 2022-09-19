@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Users - PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/style2.css">
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo">
+						<img src="assets/img/logo_pup.jpg" width="50" height="50" alt="">
+					</a>
+                </div>           
+                <div class="page-title-box pull-left">
+					<h3 onclick ="launchFullScreen(document.documentElement);">Project SAFER</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">5</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> accessed door at the <span class="noti-title">Computer Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the configuration of a device at <span class="noti-title">Office 1</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> posted a new <span class="noti-title">Blog Post</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> turned on electricity at <span class="noti-title">Room 201</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> activated alarm at the <span class="noti-title">Kitchen Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="notifications.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">1</span></a>
+					</li>		
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>							
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>					
+				</ul>
+            </div>
+			<div class="main-menu">
+				<div class="main-menu-inner slimscroll">
+					<div id="main-menu" class="main-menu">
+				<ul id="sul">
+					<section class="home">
+						<li >  
+							<section id="time"><i class="fa fa-clock-o"><a id="clock" class="clock"></a></i></section>
+						</li>		
+			
+						<li><a href="index.html" style="color:#00c5fb; font-weight:bold; background-color:#263238;padding: 7px 7px;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dash"> Dashboard</span> <span class="menu-arrow"></span></a></li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-camera"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Audiovisual Intercom</span> <span class="menu-arrow"></span></a>
+					  <ul class="list-unstyled" style="display: none;">
+						
+						<li><a href="cctv.html"> CCTV Surveillance</a></li>
+						<li><a href="https://chat-app-jsm-video.netlify.app/"> Video Conference</a></li>
+					
+					  </ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-tasks"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Resource Management</span> <span class="menu-arrow"></span></a>
+					<ul class="list-unstyled" style="display: none;">
+						<li><a href="schedule.html"> Schedule</a></li>									
+						<li><a href="ems.html"> Energy</a></li>
+						<li><a href="facilities.html"> Facilities</a></li>									
+						<li><a href="control-panel.html"> Control Panel </a></li>
+					</ul>
+				 </li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;<span class="dash">Messages</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+							<li><a href="notifications.html"> Notifications <span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="alerts.html"> Monitoring </a></li>
+							<li><a href="home.html"> Homepage </a></li>									
+						</ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-code"></i>&nbsp;&nbsp;&nbsp; <span class="dash"> Reports and Analytics</span> <span class="menu-arrow"></span> </a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="user-act.html"> Users Activity Logs<span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="sys-events.html"><span> Systems Event Logs</span></a></li>
+						</ul>
+					</li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-gear"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Configurations</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="users.html" style="color:#00c5fb; font-weight:bold;"> Users </a></li>
+							<li><a href="assets.html"> Assets </a></li>
+						</ul>
+					</li>	
+					</section>
+				</ul>
+			</div>
+			</div>
+			</div>
+					</div>
+					            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<h4 class="page-title">Users Configuration</h4>                                                                
+						</div>
+						<div class="col-xs-20 text-right m-b-20">
+                            <form action="#" method="post" id="demoForm" class="demoForm">
+                                <fieldset>
+                                    <select name="area" class="textSelect">
+                                        <option value="Default">[Area]</option>
+                                        <option value="Area1">Gnd Flr</option>
+                                        <option value="Area2">2nd Flr</option>
+                                        <option value="Area3">3rd Flr</option>
+                                        <option value="Area4">4th Flr</option>
+                                        <option value="AreaEtc">Other Areas</option>                                                                 
+                                    </select>
+                                    <select name="facility" id="facility" class="textSelect" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+                                        <!-- populated using JavaScript -->
+                                    </select>                                    
+                                    <a href="alerts.html" class="button" style="margin-left:2em;">Alerts</a>&nbsp;
+							        <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>                                             
+                                </fieldset>                       
+                            </form>
+						</div>                        
+					</div><br>
+					<div class="row">
+						<div class="form-group form-focus">					 						   
+							<div class="col-sm-6 col-md-4 col-xs-12">  
+								<input type="text" onfocus="this.placeholder=''" class="textSelect" style="width:100%; height:35px;" id="searchKeyword" onkeyup="searchFunction()" placeholder="Search keyword...">
+							</div>		      				     
+							<div class="col-sm-1 col-md-1 col-xs-1">  							
+								<button class="buttonOptions"></i>
+									<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+									<ul class="dropdown-menu pull-right">
+										<li><a href="new-profile.html">Add New</a></li>
+										<li><a href="#">Import</a></li>
+										<li><a href="#">Export</a></li>
+									</ul>
+								</button>								
+							</div>
+					   	</div>           					    					   
+					</div>									
+					<div class="row">
+						<h4 class="panel-heading" style="text-align:center;">List of Users</h4>
+						<div class="col-md-12">			
+							<div class="table-responsive">
+								<table id="searchTable" class="table table-striped custom-table m-b-0 datatable">
+									<thead>
+										<tr>
+											<th id="filterID">ID</th>
+											<th id="filterName">Name</th>
+											<th id="filterCardNo">Card No.</th>
+											<th id="filterEmail">Email</th>
+											<th id="filterRegDate">Reg. Date</th>
+											<th id="filterStatus">Status</th>
+										</tr>
+									</thead>
+									<tbody class="searchable">
+										<tr>
+											<td>200101-A000</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">J</a>
+												<h2><a href="#" onclick="accessCode()">John Doe <span>System Admin</span></a></h2>
+											</td>
+											<td>100010001000</td>
+											<td>johndoe@example.com</td>											
+											<td>1 Jan 1982</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-B000</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">M</a>
+												<h2><a href="#" onclick="accessCode()">Mike Litorus <span>Building Admin</span></a></h2>
+											</td>
+											<td>100010001001</td>
+											<td>mikelitorus@example.com</td>											
+											<td>15 Aug 1988</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-B001</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">W</a>
+												<h2><a href="#" onclick="accessCode()">	Wilmer Deluna <span>Building Staff</span></a></h2>
+											</td>
+											<td>100010001002</td>
+											<td>wilmerdeluna@example.com</td>											
+											<td>28 Feb 1982</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-B002</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">J</a>
+												<h2><a href="#" onclick="accessCode()">	John Smith <span>Building Staff</span></a></h2>
+											</td>
+											<td>100010001003</td>
+											<td>johnsmith@example.com</td>											
+											<td>28 Feb 1982</td>
+											<td>Active</td>
+										</tr>																				
+										<tr>
+											<td>200101-C000</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">R</a>
+												<h2><a href="#" onclick="accessCode()">Richard Miles <span>Faculty Admin</span></a></h2>
+											</td>
+											<td>100010001004</td>
+											<td>richardmiles@example.com</td>											
+											<td>8 Feb 1979</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-C001</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">D</a>
+												<h2><a href="#" onclick="accessCode()">	Daniel Porter <span>Faculty Member</span></a></h2>
+											</td>
+											<td>100010001005</td>
+											<td>danielporter@example.com</td>											
+											<td>21 Apr 1992</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-C002</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">T</a>
+												<h2><a href="#" onclick="accessCode()"> Tarah Shropshire <span>Faculty Member</span></a></h2>
+											</td>
+											<td>100010001006</td>
+											<td>tarahdshropshire@example.com</td>											
+											<td>27 Dec 1993</td>
+											<td>Active</td>
+										</tr>											
+										<tr>
+											<td>200101-D002</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">P</a>
+												<h2><a href="#" onclick="accessCode()">	Peter Parker <span>Student</span></a></h2>
+											</td>
+											<td>100010001007</td>
+											<td>peterparker@example.com</td>											
+											<td>14 Oct 2002</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200101-D002</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">S</a>
+												<h2><a href="#" onclick="accessCode()">	Stephen Strange <span>Student</span></a></h2>
+											</td>
+											<td>100010001008</td>
+											<td>stephenstrange@example.com</td>											
+											<td>29 May 2002</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td>200114-E001</td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">C</a>
+												<h2><a href="#" onclick="accessCode()">	Cardo Dalisay <span>Guest</span></a></h2>
+											</td>
+											<td>100010002001</td>
+											<td>cardodalisay@example.com</td>											
+											<td>14 Jan 1984</td>
+											<td>Inactive</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>							
+						</div>
+					</div><br><br>
+					<div class="row">
+						<h4 class="panel-heading" style="text-align:center;">User Access Settings</h4>
+						<div class="col-md-12">			
+							<div class="table-responsive">
+								<table id="searchTable" class="table table-striped custom-table m-b-0 datatable">
+									<thead>
+										<tr>
+											<th id="filterAccessType">Access Type</th>
+											<th id="filterModule">Module</th>
+											<th id="filterCreate">Create</th>
+											<th id="filterRead">Read</th>											
+											<th id="filterUpdate">Update</th>
+											<th id="filterDelete">Delete</th>
+											<th id="filterImport">Import</th>
+											<th id="filterExport">Export</th>
+											<th id="filterRemarks">Remarks</th>
+										</tr>
+									</thead>
+									<tbody class="searchable">
+										<tr>
+											<td>System Admin</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1A-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-1" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1A-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-2" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1A-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-3" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1A-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-4" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1A-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-5" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1A-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-6" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>System Admin</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1A-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2A-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3A-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4A-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5A-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6A-7" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1B-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-1" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1B-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-2" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1B-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-3" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1B-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-4" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1B-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-5" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1B-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-6" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Admin</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1B-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2B-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3B-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4B-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5B-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6B-7" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1C-1"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-1"></td>
+											<td class="text-center"><input type="checkbox" id="check4C-1"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-1"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-1"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1C-2"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-2"></td>
+											<td class="text-center"><input type="checkbox" id="check3C-2"></td>
+											<td class="text-center"><input type="checkbox" id="check4C-2"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-2"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-2"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1C-3"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4C-3"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-3"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-3" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1C-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2C-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4C-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5C-4"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-4" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1C-5"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4C-5"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-5"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-5" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1C-6"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-6"></td>
+											<td class="text-center"><input type="checkbox" id="check4C-6"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-6"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-6" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Building Staff</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1C-7"></td>
+											<td class="text-center"><input type="checkbox" id="check2C-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3C-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4C-7"></td>
+											<td class="text-center"><input type="checkbox" id="check5C-7"></td>
+											<td class="text-center"><input type="checkbox" id="check6C-7" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1D-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check2D-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check4D-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check5D-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check6D-1" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1D-2"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-2" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-2"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-2"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-2"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-2" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1D-3"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-3" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-3"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-3"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-3"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-3" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1D-4"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-4" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-4"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-4"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-4"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-4" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1D-5"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-5" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-5"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-5"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-5"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-5" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1D-6"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-6" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-6"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-6"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-6"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-6" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Admin</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1D-7"></td>
+											<td class="text-center"><input type="checkbox" id="check2D-7" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3D-7"></td>
+											<td class="text-center"><input type="checkbox" id="check4D-7"></td>
+											<td class="text-center"><input type="checkbox" id="check5D-7"></td>
+											<td class="text-center"><input type="checkbox" id="check6D-7" checked=""></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1E-1"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3E-1"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-1"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-1"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-1"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1E-2"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-2"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-2"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-2"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-2"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-2"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1E-3"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-3"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-3"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-3"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-3"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-3"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1E-4"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-4"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-4"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-4"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-4"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-4"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1E-5"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-5"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-5"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-5"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-5"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-5"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1E-6"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-6"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-6"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-6"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-6"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-6"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Faculty Member</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1E-7"></td>
+											<td class="text-center"><input type="checkbox" id="check2E-7"></td>
+											<td class="text-center"><input type="checkbox" id="check3E-7"></td>
+											<td class="text-center"><input type="checkbox" id="check4E-7"></td>
+											<td class="text-center"><input type="checkbox" id="check5E-7"></td>
+											<td class="text-center"><input type="checkbox" id="check6E-7"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1F-1"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3F-1"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-1"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-1"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-1"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1F-2"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-2"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-2"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-2"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-2"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-2"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1F-3"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-3"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-3"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-3"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-3"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-3"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1F-4"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-4"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-4"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-4"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-4"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-4"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1F-5"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-5"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-5"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-5"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-5"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-5"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1F-6"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-6"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-6"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-6"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-6"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-6"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Student</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1F-7"></td>
+											<td class="text-center"><input type="checkbox" id="check2F-7"></td>
+											<td class="text-center"><input type="checkbox" id="check3F-7"></td>
+											<td class="text-center"><input type="checkbox" id="check4F-7"></td>
+											<td class="text-center"><input type="checkbox" id="check5F-7"></td>
+											<td class="text-center"><input type="checkbox" id="check6F-7"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Homepage</td>
+											<td class="text-center"><input type="checkbox" id="check1G-1"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-1" checked=""></td>
+											<td class="text-center"><input type="checkbox" id="check3G-1"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-1"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-1"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-1"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Dashboard</td>
+											<td class="text-center"><input type="checkbox" id="check1G-2"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-2"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-2"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-2"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-2"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-2"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Safety & Security</td>
+											<td class="text-center"><input type="checkbox" id="check1G-3"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-3"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-3"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-3"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-3"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-3"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Resource Management</td>
+											<td class="text-center"><input type="checkbox" id="check1G-4"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-4"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-4"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-4"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-4"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-4"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Communication</td>
+											<td class="text-center"><input type="checkbox" id="check1G-5"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-5"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-5"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-5"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-5"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-5"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Reports & Analytics</td>
+											<td class="text-center"><input type="checkbox" id="check1G-6"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-6"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-6"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-6"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-6"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-6"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Guest</td>
+											<td>Configurations</td>
+											<td class="text-center"><input type="checkbox" id="check1G-7"></td>
+											<td class="text-center"><input type="checkbox" id="check2G-7"></td>
+											<td class="text-center"><input type="checkbox" id="check3G-7"></td>
+											<td class="text-center"><input type="checkbox" id="check4G-7"></td>
+											<td class="text-center"><input type="checkbox" id="check5G-7"></td>
+											<td class="text-center"><input type="checkbox" id="check6G-7"></td>
+											<td></td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="text-right m-t-20">
+								<button class="btn btn-primary btn-md" type="button" onclick="accessCode2()">Update Settings</button>
+							</div><br>
+						</div>
+					</div><br><br>				
+					<div class="row">
+						<h4 class="panel-heading" style="text-align:center;">List of Access Cards</h4>
+						<div class="col-md-12">			
+							<div class="table-responsive">
+								<table id="searchTable" class="table table-striped custom-table m-b-0 datatable">
+									<thead>
+										<tr>
+											<th id="filterCardNo">Card No.</th>
+											<th id="filterName">Cardholder</th>
+											<th id="filterRegDate">Card Type</th>
+											<th id="filterExpDate">Reg. Date</th>
+											<th id="filterExpDate">Exp. Date</th>
+											<th id="filterStatus">Status</th>
+										</tr>
+									</thead>
+									<tbody class="searchable">
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001000</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">J</a>
+												<h2><a href="#" onclick="accessCode()">John Doe <span>200101-A000</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2023</td>											
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001001</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">M</a>
+												<h2><a href="#" onclick="accessCode()">Mike Litorus <span>200101-B000</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2023</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001002</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">W</a>
+												<h2><a href="#" onclick="accessCode()">Wilmer Deluna <span>200101-B001</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001003</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">J</a>
+												<h2><a href="#" onclick="accessCode()">John Smith <span>200101-B002</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001004</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">R</a>
+												<h2><a href="#" onclick="accessCode()">Richard Miles <span>200101-C000</span></a></h2>
+											</td>		 																				
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2023</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001005</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">D</a>
+												<h2><a href="#" onclick="accessCode()">Daniel Porter <span>200101-C001</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001006</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">T</a>
+												<h2><a href="#" onclick="accessCode()">Tarah Shropshire <span>200101-C002</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001007</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">P</a>
+												<h2><a href="#" onclick="accessCode()">Peter Parker <span>200101-A000</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010001008</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">S</a>
+												<h2><a href="#" onclick="accessCode()">Stephen Strange <span>200101-A000</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Jan 2020</td>
+											<td>5 Jan 2021</td>
+											<td>Active</td>
+										</tr>
+										<tr>
+											<td><a href="#" data-toggle="modal" data-target="#edit_card">100010002001</a></td>
+											<td>
+												<a href="#" onclick="accessCode()" class="avatar">C</a>
+												<h2><a href="#" onclick="accessCode()">Cardo Dalisay <span>200114-E001</span></a></h2>
+											</td>											
+											<td>Door Access/Timekeeping</td>
+											<td>5 Oct 2020</td>
+											<td>6 Oct 2020</td>
+											<td>Inactive</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="text-right m-t-20">								
+								<button class="btn btn-primary btn-md" type="button" data-toggle="modal" data-target="#add_card" class="btn btn-primary btn-md">Add New Card</button>								
+							</div><br>
+						</div>
+					</div>												
+                </div>
+				<div class="notification-box">
+					<div class="msg-sidebar notifications msg-noti">
+						<div class="topnav-dropdown-header">
+							<span>Messages</span>
+						</div>
+						<div class="drop-scroll msg-list-scroll">
+							<ul class="list-box">
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Richard Miles </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item new-message">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">John Doe</span>
+												<span class="message-time">1 Aug</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Tarah Shropshire </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Mike Litorus</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Catherine Manseau </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">D</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Domenic Houston </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">B</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Buster Wigton </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Rolland Webber </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Claire Mapes </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Melita Faucher</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Jeffery Lalor</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Loren Gatlin</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Tarah Shropshire</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="chat.html">See all messages</a>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div id="add_card" class="modal custom-modal fade" role="dialog">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-content modal-lg">
+						<div class="modal-header">
+							<h4 class="modal-title">Add New Access Card</h4>
+						</div>
+						<div class="modal-body">
+							<form class="m-b-30">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Card No.  <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="100010003001" disabled>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Cardholder User ID <span class="text-danger">*</span></label>
+											<input class="form-control" type="text">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Access Type <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1"> System Admin </option>
+												<option value="2"> Building Admin </option>
+												<option value="3"> Building Staff </option>
+												<option value="4"> Faculty Admin </option>
+												<option value="5"> Faculty Member </option>
+												<option value="6"> Student </option>
+												<option value="7"> Guest </option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Card Type <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1"> Door Access/Timekeeping </option>
+												<option value="2"> Electricity Control </option>
+												<option value="3"> Gas/Water Control </option>
+												<option value="4"> Solar LED Control </option>
+												<option value="5"> Alarm Control </option>
+												<option value="6"> Admin Access Mode</option>
+												<option value="7"> Emergency Mode </option>
+												<option value="8"> Multimedia Control </option>
+												<option value="9"> Sensors Control </option>
+												<option value="10"> Special Functions </option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Exp. Date <span class="text-danger">*</span></label>
+											<div class="cal-icon"><input class="form-control floating datetimepicker" type="text"></div>
+										</div>
+									</div>									
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Status <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1"> Active </option>
+												<option value="2"> Inactive </option>
+											</select>
+										</div>
+									</div>																																																																   								  							    
+								</div>
+								<div class="m-t-20 text-center">
+									<button class="btn btn-primary" onclick="accessCode3()">Save</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="edit_card" class="modal custom-modal fade" role="dialog">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-content modal-lg">
+						<div class="modal-header">
+							<h4 class="modal-title">Edit Access Card</h4>
+						</div>
+						<div class="modal-body">
+							<form class="m-b-30">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Card No.  <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="100010001000" disabled>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Cardholder User ID <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" value="200101-A000">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Access Type <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1" selected> System Admin </option>
+												<option value="2"> Building Admin </option>
+												<option value="3"> Building Staff </option>
+												<option value="4"> Faculty Admin </option>
+												<option value="5"> Faculty Member </option>
+												<option value="6"> Student </option>
+												<option value="7"> Guest </option>
+											</select>
+										</div>
+									</div>																				
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Card Type <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1" selected> Door Access/Timekeeping </option>
+												<option value="2"> Electricity Control </option>
+												<option value="3"> Gas/Water Control </option>
+												<option value="4"> Solar LED Control </option>
+												<option value="5"> Alarm Control </option>
+												<option value="6"> Admin Access Mode</option>
+												<option value="7"> Emergency Mode </option>
+												<option value="8"> Multimedia Control </option>
+												<option value="9"> Sensors Control </option>
+												<option value="10"> Special Functions </option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Exp. Date <span class="text-danger">*</span></label>
+											<div class="cal-icon"><input class="form-control floating datetimepicker" type="text" value="01/05/2023"></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Status <span class="text-danger">*</span></label>
+											<select class="select floating" id="cardStatus"> 
+												<option value="0"> -- Select -- </option>
+												<option value="1" selected> Active </option>
+												<option value="2"> Inactive </option>
+											</select>
+										</div>
+									</div>																																																					   								  							    
+								</div>
+								<div class="m-t-20 text-center">
+									<button class="btn btn-primary" onclick="accessCode3()">Save</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>			
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/js/form2.js"></script>
+		<script language="javascript">
+			function accessCode() {
+				var code = prompt("Enter Access Code:");
+				if (code === null) {
+					return;
+				}			
+				if(code == "5678") {
+					window.location.replace('profile.html')/*opens the target page while Id & password matches*/
+				}		
+				else {
+					alert("Invalid Code")/*displays error message*/
+				}
+			}
+			
+			function accessCode2() {
+				var code2 = prompt("Enter Access Code:");
+				if (code2 === null) {
+					return;
+				}			
+				if(code2 == "5678") {
+					alert("Access Settings Updated");
+					window.location.replace('users.html')
+				}		
+				else {
+					alert("Invalid Code")/*displays error message*/
+				}
+			}	
+
+			function accessCode3() {
+				var code3 = prompt("Enter Access Code:");
+				if (code3 === null) {
+					return;
+				}			
+				if(code3 == "5678") {
+					alert("Card Updated");					
+					window.location.replace('view-device.html')/*opens the target page while Id & password matches*/
+				}		
+				else {
+					alert("Invalid Code")/*displays error message*/
+				}
+			}					
+		</script>	
+    </body>
+</html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Facilities - PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/plugins/morris/morris.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/style2.css">
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo">
+						<img src="assets/img/logo1.png" width="50" height="50" alt="">
+					</a>
+                </div>           
+                <div class="page-title-box pull-left">
+					<h3 onclick ="launchFullScreen(document.documentElement);">Project SAFER</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">5</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> accessed door at the <span class="noti-title">Computer Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the configuration of a device at <span class="noti-title">Office 1</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> posted a new <span class="noti-title">Blog Post</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> turned on electricity at <span class="noti-title">Room 201</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> activated alarm at the <span class="noti-title">Kitchen Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="notifications.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">1</span></a>
+					</li>		
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>							
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>					
+				</ul>
+            </div>
+			<div class="main-menu">
+				<div class="main-menu-inner slimscroll">
+					<div id="main-menu" class="main-menu">
+				<ul id="sul">
+					<section class="home">
+						<li >  
+							<section id="time"><i class="fa fa-clock-o"><a id="clock" class="clock"></a></i></section>
+						</li>		
+			
+						<li><a href="index.html" style="color:#00c5fb; font-weight:bold; background-color:#263238;padding: 7px 7px;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dash"> Dashboard</span> <span class="menu-arrow"></span></a></li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-camera"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Audiovisual Intercom</span> <span class="menu-arrow"></span></a>
+					  <ul class="list-unstyled" style="display: none;">
+						
+						<li><a href="cctv.html"> CCTV Surveillance</a></li>
+						<li><a href="https://chat-app-jsm-video.netlify.app/"> Video Conference</a></li>
+						
+					  </ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-tasks"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Resource Management</span> <span class="menu-arrow"></span></a>
+					<ul class="list-unstyled" style="display: none;">
+						<li><a href="schedule.html"> Schedule</a></li>									
+						<li><a href="ems.html"> Energy</a></li>
+						<li><a href="facilities.html" style="color:#00c5fb; font-weight:bold;"> Facilities</a></li>									
+						<li><a href="control-panel.html"> Control Panel </a></li>
+					</ul>
+				 </li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;<span class="dash">Messages</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+							<li><a href="notifications.html"> Notifications <span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="alerts.html"> Monitoring </a></li>
+							<li><a href="home.html"> Homepage </a></li>									
+						</ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-code"></i>&nbsp;&nbsp;&nbsp; <span class="dash"> Reports and Analytics</span> <span class="menu-arrow"></span> </a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="user-act.html"> Users Activity Logs<span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="sys-events.html"><span> Systems Event Logs</span></a></li>
+						</ul>
+					</li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-gear"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Configurations</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="users.html"> Users </a></li>
+							<li><a href="assets.html"> Assets </a></li>
+						</ul>
+					</li>	
+					</section>
+				</ul>
+			</div>
+			</div>
+			</div>
+			</div>
+					
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<h4 class="page-title">Facilities Management</h4>                                                                
+						</div>
+						<div class="col-xs-20 text-right m-b-20">
+                            <form action="#" method="post" id="demoForm" class="demoForm">
+                                <fieldset>
+                                    <select name="area" class="textSelect">
+                                        <option value="Default">[Area]</option>
+                                        <option value="Area1">Gnd Flr</option>
+                                        <option value="Area2">2nd Flr</option>
+                                        <option value="Area3">3rd Flr</option>
+                                        <option value="Area4">4th Flr</option>
+                                        <option value="AreaEtc">Other Areas</option>                                                                 
+                                    </select>
+                                    <select name="facility" id="facility" class="textSelect" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+                                        <!-- populated using JavaScript -->
+                                    </select>                                    
+                                    <a href="alerts.html" class="button" style="margin-left:2em;">Alerts</a>&nbsp;
+							        <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>                                             
+                                </fieldset>                       
+                            </form>
+						</div>                        
+					</div><br>		
+					<div class="row">
+						<div class="form-group form-focus">					 						   
+							<div class="col-sm-6 col-md-4 col-xs-12">  
+								<input type="text" onfocus="this.placeholder=''" class="textSelect" style="width:100%; height:35px;" id="searchKeyword" onkeyup="searchFunction()" placeholder="Search keyword...">
+							</div>		      				     
+							<div class="col-sm-1 col-md-1 col-xs-1">  							
+								<button class="buttonOptions"></i>
+									<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+									<ul class="dropdown-menu pull-right">
+										<li><a href="#" data-toggle="modal" data-target="#select_asset">Add New</a></li>
+										<li onclick="download_csv()"><a href="#">Import</a></li>
+										<li><a href="#">Export</a></li>
+									</ul>
+								</button>								
+							</div>
+					   	</div>           					    					   
+					</div>
+					<div class="row">
+						<h4 class="panel-heading" style="text-align:center;">List of Facilities</h4>						
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table id="searchTable" class="table table-striped custom-table m-b-0 datatable">
+									<thead>
+										<tr>
+											<th id="filterID">ID</th>
+											<th id="filterState">Facility</th>
+											<th id="filterArea">Area</th>
+											<th id="filterACS">ACS</th>
+											<th id="filterACS">CCTV</th>
+											<th id="filterFDAS">FDAS</th>
+											<th id="filterENV">ENV</th>
+											<th id="filterELEC">ELEC</th>
+											<th id="filterG&W">G&W</th>
+											<th id="filterPAS">PAS</th>
+											<th id="filterRemarks">Remarks</th>
+										</tr>
+									</thead>
+									<tbody class="searchable">
+										<tr>
+											<td>A1-00101</td>
+											<td><label><a href="#" class="facility">Gate</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00102</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Ground</a></label></td>
+											<td>Gnd Flr</td>
+											<td>OFF</td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00103</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Lobby</a></label></td>
+											<td>Gnd Flr</td>
+											<td>OFF</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00104</td>
+											<td><label><a href="control-office1.html" class="facility" onclick="accessCode()">Office1</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00105</td>
+											<td><label><a href="control-office2.html" class="facility" onclick="accessCode()">Office2</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00106</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office3</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00107</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office4</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00108</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office5</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00109</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office6</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00110</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office7</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00111</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office8</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00112</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Office9</a></label></td>
+											<td>Gnd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00201</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm201</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00202</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm202</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00203</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm203</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00204</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm204</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00205</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm205</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00206</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm206</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00207</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm207</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00208</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm208</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00209</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm209</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00210</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm210</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00211</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm211</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00212</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm212</a></label></td>
+											<td>2nd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00301</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm301</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00302</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm302</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00303</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm303</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00304</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm304</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00305</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm305</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00306</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm306</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00307</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm307</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00308</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm308</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00309</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm309</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00310</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm310</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00311</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm311</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00312</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm312</a></label></td>
+											<td>3rd Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>	
+										<tr>
+											<td>A1-00401</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm401</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00402</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm402</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00403</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm403</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00404</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm404</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00405</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm405</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00406</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm406</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00407</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm407</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00408</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm408</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00409</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm409</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00410</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm410</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00411</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm411</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00412</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rm412</a></label></td>
+											<td>4th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00501</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rooftop1</a></label></td>
+											<td>5th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00502</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rooftop2</a></label></td>
+											<td>5th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00503</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">Rooftop3</a></label></td>
+											<td>5th Flr</td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td><b> ON </b></td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00504</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00505</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00506</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00507</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00508</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00509</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00510</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00511</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>
+										<tr>
+											<td>A1-00512</td>
+											<td><label><a href="#" class="facility" onclick="accessCode()">---</a></label></td>
+											<td>5th Flr</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>
+											<td>OFF</td>											
+											<td></td>
+										</tr>																																																																																																																																																																														
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>				
+					<div class="notification-box">
+						<div class="msg-sidebar notifications msg-noti">
+							<div class="topnav-dropdown-header">
+								<span>Messages</span>
+							</div>
+							<div class="drop-scroll msg-list-scroll">
+								<ul class="list-box">
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">R</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Richard Miles </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item new-message">
+												<div class="list-left">
+													<span class="avatar">J</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">John Doe</span>
+													<span class="message-time">1 Aug</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">T</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Tarah Shropshire </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">M</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Mike Litorus</span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">C</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Catherine Manseau </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">D</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Domenic Houston </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">B</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Buster Wigton </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">R</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Rolland Webber </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">C</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Claire Mapes </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">M</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Melita Faucher</span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">J</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Jeffery Lalor</span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">L</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Loren Gatlin</span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">T</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Tarah Shropshire</span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="chat.html">See all messages</a>
+							</div>
+						</div>
+					</div>					
+				</div>
+        	</div>
+			<div id="select_asset" class="modal custom-modal fade" role="dialog">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-content modal-lg">
+						<div class="modal-header">
+							<h4 class="modal-title">Select Asset Category</h4>							
+						</div>
+						<div class="modal-body">
+							<div class="m-t-20 text-center">								
+								<div class="row">
+									<a href="new-facility.html" id="newFacility" class="btn btn-primary" style="width:33%;">Facility</a>
+								</div><br>
+								<div class="row">
+									<a href="new-system.html" id="newSystem" class="btn btn-primary" style="width:33%;">System</a>
+								</div><br>
+								<div class="row">
+									<a href="new-device.html" id="newDevice" class="btn btn-primary" style="width:33%;">Device</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>			
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="assets/js/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.fullcalendar.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>	
+		<script type="text/javascript" src="assets/js/form2.js"></script>
+		<script language="javascript">
+/*			function export_table_to_csv(html, filename) {
+				var csv = [];
+				var rows = document.querySelectorAll("table tr");
+
+				for (var i = 0; i < rows.length; i++) {
+					var row = [],
+						cols = rows[i].querySelectorAll("td, th");
+
+					for (var j = 0; j < cols.length; j++)
+						row.push(cols[j].innerText);
+
+					csv.push(row.join(","));
+				}
+
+				// Download CSV
+				download_csv(csv.join("\n"), filename);
+			}
+
+			document.querySelector("button").addEventListener("click", function() {
+				var html = document.querySelector("table").outerHTML;
+				export_table_to_csv(html, "table.csv");
+			});	*		
+		</script>		
+    </body>
+</html>

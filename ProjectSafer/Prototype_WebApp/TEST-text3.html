@@ -1,0 +1,25 @@
+<html>
+    <head><title>Hello World!</title></head>
+    <body>
+        <audiod id="audioPlayer" controls>
+            <source id="MP3source" src="assets/media/alert.mp3" type="audio/mpeg">
+           </audio> 
+        <script>
+            var audio = document.getElementById('audioPlayer');
+
+            var source = document.getElementById('MP3source');
+            source.src= document.getElementById('23231')
+                    .getElementsByTagName('a')[0].href; 
+            //set source.src to the link element inside the 23231 div
+        </script>
+
+<!--                   <div class="row">
+                        <div class="col-xs-4">
+                            <p>
+                                <input type="text" width=500px id="prod" autofocus value="New Alert Message"/>
+                                <input type="button" id="button" value="Save" onclick="createChk(prod)">
+                            </p><br>
+                        </div><br>
+                    </div>
+--> 
+    </body>

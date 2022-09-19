@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Monitoring - PUPPQ Smart BMS | Alerts</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/plugins/morris/morris.css">
+		<link rel="stylesheet" href="assets/css/style2.css">
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body onload="accessSCADA()">
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo">
+						<img src="assets/img/logo1.png" width="50" height="50" alt="">
+					</a>
+                </div>           
+                <div class="page-title-box pull-left">
+					<h3 onclick ="launchFullScreen(document.documentElement);">Project SAFER</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">5</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> accessed door at the <span class="noti-title">Computer Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the configuration of a device at <span class="noti-title">Office 1</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> posted a new <span class="noti-title">Blog Post</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> turned on electricity at <span class="noti-title">Room 201</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> activated alarm at the <span class="noti-title">Kitchen Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="notifications.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">1</span></a>
+					</li>		
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>							
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>					
+				</ul>
+            </div>
+			<div class="main-menu">
+				<div class="main-menu-inner slimscroll">
+					<div id="main-menu" class="main-menu">
+				<ul id="sul">
+					<section class="home">
+						<li >  
+							<section id="time"><i class="fa fa-clock-o"><a id="clock" class="clock"></a></i></section>
+						</li>		
+			
+						<li><a href="index.html" style="color:#00c5fb; font-weight:bold; background-color:#263238; padding: 7px 7px;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dash"> Dashboard</span> <span class="menu-arrow"></span></a></li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-camera"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Audiovisual Intercom</span> <span class="menu-arrow"></span></a>
+					  <ul class="list-unstyled" style="display: none;">
+						
+						<li><a href="cctv.html"> CCTV Surveillance</a></li>
+						<li><a href="https://chat-app-jsm-video.netlify.app/"> Video Conference</a></li>
+						
+					  </ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-tasks"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Resource Management</span> <span class="menu-arrow"></span></a>
+					<ul class="list-unstyled" style="display: none;">
+						<li><a href="schedule.html"> Schedule</a></li>									
+						<li><a href="ems.html"> Energy</a></li>
+						<li><a href="facilities.html"> Facilities</a></li>									
+						<li><a href="control-panel.html"> Control Panel </a></li>
+					</ul>
+				 </li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;<span class="dash">Messages</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+							<li><a href="notifications.html"> Notifications <span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="alerts.html" style="color:#00c5fb; font-weight:bold;"> Monitoring</a></li>
+							<li><a href="home.html"> Homepage </a></li>									
+						</ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-code"></i>&nbsp;&nbsp;&nbsp; <span class="dash"> Reports and Analytics</span> <span class="menu-arrow"></span> </a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="user-act.html"> Users Activity Logs<span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="sys-events.html"><span> Systems Event Logs</span></a></li>
+						</ul>
+					</li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-gear"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Configurations</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="users.html"> Users </a></li>
+							<li><a href="assets.html"> Assets </a></li>
+						</ul>
+					</li>	
+					</section>
+				</ul>
+			</div>
+			</div>
+			</div>
+					</div>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<h4 class="page-title">Alerts</h4>                                                                
+						</div>
+						<div class="col-xs-20 text-right m-b-20">
+                            <form action="#" method="post" id="demoForm" class="demoForm">
+                                <fieldset>
+                                    <select name="area" class="textSelect">
+                                        <option value="Default">[Area]</option>
+                                        <option value="Area1">Gnd Flr</option>
+                                        <option value="Area2">2nd Flr</option>
+                                        <option value="Area3">3rd Flr</option>
+                                        <option value="Area4">4th Flr</option>
+                                        <option value="AreaEtc">Other Areas</option>                                                                 
+                                    </select>
+                                    <select name="facility" id="facility" class="textSelect" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+                                        <!-- populated using JavaScript -->
+                                    </select>                                    
+									<a href="#" class="button" id="add-announce" style="margin-left:2em;">Alerts</a>&nbsp;
+							        <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>                                             
+                                </fieldset>                       
+                            </form>
+						</div>  						                       
+					</div><br>            
+					<div class="row">	
+						<div class="col-xs-12 col-s-6 col-md-6 col-lg-6">
+							<div class="card-box">
+								<div class="panel-heading text-center">
+									<div class="row">
+										<h4>New Alert Message</h4>
+									</div><br>
+									<div class="row">
+										<a href="#" class="buttonPrev" id="message"><i class="fa fa-edit"></i></a>
+										<a href="#popup1" class="buttonStart" onclick="play(audio)" id="audio1"><i class="fa fa-play"></i></a>
+										<a href="#" class="buttonStop" onclick="stop(audio)"><i class="fa fa-stop"></i></a>										
+									</div><br>
+									<div class="row">										
+										<a href="schedule.html#booking" id="message">Schedule</a>&nbsp;|&nbsp;
+										<a href="#popup1" id="message">Preview</a>
+									</div><br>
+									<div class="row">
+										<audio controls="true" id="liveaudio" style="width:100%;"></audio>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-s-6 col-md-6 col-lg-3">	
+							<div class="card-box">												
+								<div class="panel-heading text-center">
+									<h4 >PAS Areas</h4>
+								</div>				
+								<div class="row" style="margin-left: 3px; text-align: left;">						
+									<form>
+										<p>
+                                            <input type="checkbox" id="switchA" name="switchA" class="switch">
+                                            <label for="switchA"><a href="#" class="alertAreaLabel">Gnd Floor</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchB" name="switchB" class="switch">
+                                            <label for="switchB"><a href="#" class="alertAreaLabel">2nd Floor</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchC" name="switchC" class="switch" checked>
+                                            <label for="switchC"><a href="#" class="alertAreaLabel">3rd Floor</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchD" name="switchD" class="switch" checked>
+                                            <label for="switchD"><a href="#" class="alertAreaLabel">4th Floor</a></label>
+										</p>		
+										<p>
+                                            <input type="checkbox" id="switchE" name="switchE" class="switch">
+                                            <label for="switchE"><a href="#" class="alertAreaLabel">Other Areas</a></label>
+										</p>																					
+									</form>							
+								</div>								
+							</div>												
+						</div>
+						<div class="col-xs-6 col-s-6 col-md-6 col-lg-3">	
+							<div class="card-box">												
+								<div class="panel-heading text-center">
+									<h4>PAS Speakers</h4>
+								</div>				
+								<div class="row" style="margin-left: 3px; text-align: left;">						
+									<form>
+										<p>
+                                            <input type="checkbox" id="switchF" name="switchF" class="switch" checked>
+                                            <label for="switchF"><a onclick="viewDevice()" class="alertAreaLabel">Hallway A</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchG" name="switchG" class="switch" checked>
+                                            <label for="switchG"><a onclick="viewDevice()" class="alertAreaLabel">Hallway B</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchH" name="switchH" class="switch">
+                                            <label for="switchH"><a onclick="viewDevice()" class="alertAreaLabel">Rooms A</a></label>
+										</p>
+										<p>
+                                            <input type="checkbox" id="switchI" name="switchI" class="switch">
+                                            <label for="switchI"><a onclick="viewDevice()" class="alertAreaLabel">Rooms B</a></label>
+										</p>		
+										<p>
+                                            <input type="checkbox" id="switchJ" name="switchJ" class="switch">
+                                            <label for="switchJ"><a onclick="viewDevice()" class="alertAreaLabel">Other Speakers</a></label>
+										</p>																					
+									</form>							
+								</div>								
+							</div>												
+						</div>						
+					</div>	
+					<div class="row">	
+						<div class="col-xs-12 col-s-6 col-md-6 col-lg-3">
+							<div class="card-box">
+								<div class="panel-heading text-center">
+									<div class="row">
+										<h4 >Fire Alert</h4>
+									</div><br>
+									<div class="row">
+										<a href="#" class="buttonPrev" id="message2"><i class="fa fa-edit"></i></a>
+										<a href="#popup2" class="buttonStart" onclick="play(audio)" id="audio2"><i class="fa fa-play"></i></a>
+										<a href="#" class="buttonStop" onclick="stop(audio)"><i class="fa fa-stop"></i></a>	
+									</div><br>
+									<div class="row">										
+										<a href="#" id="message2">Update</a>&nbsp;|&nbsp;
+										<a href="#popup2" id="message2">Preview</a>
+									</div><br>
+									<div class="row">
+										<audio style="width:100%; height:30px;" controls loop>										
+											<source src="assets/media/firealert.mp3" id="firealert">
+										</audio>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-s-6 col-md-6 col-lg-3">
+							<div class="card-box">
+								<div class="panel-heading text-center">
+									<div class="row">
+										<h4 >Earthquake Alert</h4>
+									</div><br>
+									<div class="row">
+										<a href="#" class="buttonPrev" id="message3"><i class="fa fa-edit"></i></a>
+										<a href="#popup3" class="buttonStart" onclick="play(audio)" id="audio3"><i class="fa fa-play"></i></a>
+										<a href="#" class="buttonStop" onclick="stop(audio)"><i class="fa fa-stop"></i></a>	
+									</div><br>
+									<div class="row">										
+										<a href="#" id="message3">Update</a>&nbsp;|&nbsp;
+										<a href="#popup3" id="message2">Preview</a>
+									</div><br>
+									<div class="row">
+										<audio style="width:100%; height:30px;" controls loop>										
+											<source src="assets/media/earthquakealert.mp3" id="earthquakealert">
+										</audio>
+									</div>
+								</div>
+							</div>												
+						</div>	
+						<div class="col-xs-12 col-s-6 col-md-6 col-lg-3">
+							<div class="card-box">
+								<div class="panel-heading text-center">
+									<div class="row">
+										<h4 >Storm Alert</h4>
+									</div><br>
+									<div class="row">
+										<a href="#" class="buttonPrev" id="message4"><i class="fa fa-edit"></i></a>
+										<a href="#popup4" class="buttonStart" onclick="play(audio)" id="audio4"><i class="fa fa-play"></i></a>
+										<a href="#" class="buttonStop" onclick="stop(audio)"><i class="fa fa-stop"></i></a>	
+									</div><br>
+									<div class="row">										
+										<a href="#" id="message4">Update</a>&nbsp;|&nbsp;
+										<a href="#popup4" id="message4">Preview</a>
+									</div><br>
+									<div class="row">
+										<audio style="width:100%; height:30px;" controls loop>										
+											<source src="assets/media/stormalert.mp3" id="stormalert">
+										</audio>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-s-6 col-md-6 col-lg-3">	
+							<div class="card-box">
+								<div class="panel-heading text-center">
+									<div class="row">
+										<h4 >Special Alert</h4>
+									</div><br>
+									<div class="row">
+										<a href="#" class="buttonPrev" id="message5"><i class="fa fa-edit"></i></a>
+										<a href="#popup5" class="buttonStart" onclick="play(audio)" id="audio5"><i class="fa fa-play"></i></a>
+										<a href="#" class="buttonStop" onclick="stop(audio)"><i class="fa fa-stop"></i></a>	
+									</div><br>
+									<div class="row">										
+										<a href="#" id="message5">Update</a>&nbsp;|&nbsp;
+										<a href="#popup5" id="message5">Preview</a>
+									</div><br>
+									<div class="row">
+										<audio style="width:100%; height:30px;" controls loop>										
+											<source src="assets/media/specialalert.mp3" id="specialalert">
+										</audio>
+									</div>
+								</div>
+							</div>											
+						</div>					
+					</div>
+					<div id="popup1" class="overlay">
+                        <div class="popup">
+                            <div class="center">
+                                <audio autoplay id="audio" src="assets/media/alert.mp3"></audio>
+                                <h2 class="title">ALERT!!!</h2><br>
+                                <h3 class="message" id="outputMessage"></h3>
+                            </div>
+							<a class="close" href="#">&times;</a>
+                        </div>
+					</div>
+					<div id="popup2" class="overlay">
+                        <div class="popup">
+                            <div class="center">
+                                <audio autoplay id="audio2" src="assets/media/alert.mp3"></audio>
+                                <h2 class="title">FIRE ALERT!!!</h2><br>
+                                <h3 class="message" id="outputMessage2">Calmly and safely evacuate the building now.</h3>
+                            </div>
+                            <a class="close" href="#">&times;</a>
+                        </div>
+					</div>
+					<div id="popup3" class="overlay">
+                        <div class="popup">
+                            <div class="center">
+                                <audio autoplay id="audio3" src="assets/media/alert.mp3"></audio>
+                                <h2 class="title">EARTHQUAKE ALERT!!!</h2><br>
+                                <h3 class="message" id="outputMessage3">Duck, cover, and hold!.</h3>
+                            </div>
+                            <a class="close" href="#">&times;</a>
+                        </div>
+					</div>
+					<div id="popup4" class="overlay">
+                        <div class="popup">
+                            <div class="center">
+                                <audio autoplay id="audio4" src="assets/media/alert.mp3"></audio>
+                                <h2 class="title">STORM ALERT!!!</h2><br>
+                                <h3 class="message" id="outputMessage4">Calmly and safely move to a safer place until further notice.</h3>
+                            </div>
+                            <a class="close" href="#">&times;</a>
+                        </div>
+					</div>
+					<div id="popup5" class="overlay">
+                        <div class="popup">
+                            <div class="center">
+                                <audio autoplay id="audio5" src="assets/media/alert.mp3"></audio>
+                                <h2 class="title">SPECIAL ALERT!!!</h2><br>
+                                <h3 class="message" id="outputMessage5">WALA PA RING SAHOD!!!!</h3>
+                            </div>
+                            <a class="close" href="#">&times;</a>
+                        </div>
+	                </div>
+					<div id="announce" class="overlay">
+                        <div class="announce">
+                            <div class="center">
+                                <h2 class="title">Audio Announcement</h2><br>					
+									<div class="row">
+										<audio controls>										
+											<source src="assets/media/firealert.mp3" id="firealert">
+										</audio>
+										<span style="color: white;">Fire Alert</span>
+										<a href="#" class="buttonPrev" style="padding: 10px">Edit</a>
+										<a href="#" class="buttonStart">Prev</a>																   								  							    
+									</div><br>
+									<div class="row">
+										<audio controls>											
+											<source src="assets/media/earthquakealert.mp3" id="earthquakealert">
+										</audio>	
+										<span style="color: white;">Earthquake Alert</span>
+										<a href="#" class="buttonPrev">Edit</a>
+										<a href="#" class="buttonStart">Prev</a>																									   								  							    
+									</div><br>										
+									<div class="row">
+										<audio controls>											
+											<source src="assets/media/stormalert.mp3" id="stormalert">
+										</audio>	
+										<span style="color: white;">Storm Alert</span>
+										<a href="#" class="buttonPrev">Edit</a>
+										<a href="#" class="buttonStart">Prev</a>																									   								  							    
+									</div><br>																		
+									<div class="row">
+										<audio controls>											
+											<source src="assets/media/specialalert.mp3" id="specialalert">
+										</audio>	
+										<span style="color: white;">Special Alert</span>
+										<a href="#" class="buttonPrev">Edit</a>
+										<a href="#" class="buttonStart">Prev</a>																									   								  							    
+									</div><br>
+									<div class="m-t-20 text-center">
+										<button class="buttonStart" onclick="confirm('Are you sure you want to speak live?')">Speak Live <i class="fa fa-microphone"></i></button>
+										<button class="buttonStart" onclick="play(audio)">Standard Alert Audio</i></button>
+										<button class="buttonStop" onclick="stop(audio)">Stop Alert</button>										
+									</div><br>
+                            </div>
+                            <a class="close" href="#">&times;</a>
+                        </div>
+	                </div>								   
+				</div>				
+				<div class="notification-box">
+					<div class="msg-sidebar notifications msg-noti">
+						<div class="topnav-dropdown-header">
+							<span>Messages</span>
+						</div>
+						<div class="drop-scroll msg-list-scroll">
+							<ul class="list-box">
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Richard Miles </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item new-message">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">John Doe</span>
+												<span class="message-time">1 Aug</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Tarah Shropshire </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Mike Litorus</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Catherine Manseau </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">D</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Domenic Houston </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">B</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Buster Wigton </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Rolland Webber </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Claire Mapes </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Melita Faucher</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Jeffery Lalor</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Loren Gatlin</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Tarah Shropshire</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="chat.html">See all messages</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="assets/js/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.fullcalendar.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/form2.js"></script>
+		<script>
+			function play() {
+				var audio = document.getElementById("audio");
+				audio.play("audio");
+			}
+			
+			function stop() {
+				var audio = document.getElementById("audio");		
+				audio.pause();
+				audio.currentTime = 0;
+			}
+			
+
+			document.getElementById("message").onclick = function(message){
+				var name = prompt("Write New Alert Message");
+			document.getElementById("outputMessage").innerText = name;			
+			}
+
+			document.getElementById("message2").onclick = function(message2){
+				var name2 = prompt("Write New Fire Alert Message");
+			document.getElementById("outputMessage2").innerText = name2;			
+			}
+
+			document.getElementById("message3").onclick = function(message3){
+				var name3 = prompt("Write New Earthquake Alert Message");
+			document.getElementById("outputMessage3").innerText = name3;			
+			}
+
+			document.getElementById("message4").onclick = function(message4){
+				var name4 = prompt("Write New Storm Alert Message");
+			document.getElementById("outputMessage4").innerText = name4;			
+			}
+
+			document.getElementById("message5").onclick = function(message5){
+				var name5 = prompt("Write New Special Alert Message");
+			document.getElementById("outputMessage5").innerText = name5;			
+			}
+
+
+			var liveaudio = document.querySelector("#liveaudio");
+			if (navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia({ audio: true })
+					.then(function(stream) {
+						liveaudio.srcObject = stream;
+					})
+					.catch(function(err0r) {
+						console.log("Something went wrong!");
+					});
+			}
+		</script>
+    </body>
+</html>	

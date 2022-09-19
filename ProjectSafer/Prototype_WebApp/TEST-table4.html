@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPldaEI-L0VnYiFfJwRtKgg47LlzYY-iaHUVUqK8BovGdNJ8EoKLVurMZ3tY8rGx_rhJHj0k-sb1K4/pubhtml" class="button" onclick="confirm('Click OK to continue.')">Generate Report</a>&nbsp;
+    <script>
+    //global variables
+    var rows = []; //rows 
+    var currentOrder = 'ascending'; //sorting order
+    var inputFilter = document.getElementById('partNum'); //input field for ItemName
+    var inputFilterDes = document.getElementById('partDes'); //input field for description
+    var nameTable = document.getElementById('table'); //html table
+
+    //load function being used for pulling data from google sheet
+
+    function load() {
+    //calling get data function with array and filter array inside
+    google.script.run
+        .withSuccessHandler(function(response) {
+        //response function will be separted into column values
+        rows = response.map(function(element) {
+            //all the elements converted into columns
+            return {
+            itemCode: element[0],
+            itemName: element[1],
+            itemDescription: element[2],
+            inStock: element[3],
+            committed: element[4],
+            onOrder: element[5],
+            available: element[6],
+            warehouse: element[7]
+            };
+        });
+        //rows mapping finished
+
+        renderTableRows(rows);
+        //initial load finished here
+
+        //filter section starts
+
+        //Item name filter
+
+        inputFilter.addEventListener('keyup', function(evt) {
+            if (evt.keyCode === 13) {
+            // Cancel the default action, if needed
+            evt.preventDefault();
+            var filter = evt.target.value.toString().toLowerCase();
+            }
+            var filteredArray = rows.filter(function(row) {
+            return row.itemName.toString().toLowerCase().includes(filter);
+            });
+
+            renderTableRows(filteredArray);
+        });
+        //description filter
+
+        inputFilterDes.addEventListener('keyup', function(evt) {
+            if (evt.keyCode === 13) {
+            // Cancel the default action, if needed
+            evt.preventDefault();
+            var filterDes = evt.target.value.toString().toLowerCase();
+            }
+            var filteredArrayDes = rows.filter(function(row) {
+
+            return row.itemDescription.toString().toLowerCase().includes(filterDes);
+            });
+            renderTableRows(filteredArrayDes);
+        });
+
+        })
+        .getData("SAP"); //pull data from defined sheet
+    }
+    //retruing array values in HTML table and placing them in page
+    function renderTableRows(arr) {
+    nameTable.innerHTML = arr.map(function(row) {
+        return '<tr>' + 
+        '<td>' + row.itemCode + '</td>' + '<td>' + row.itemName + '</td>' + 
+        '<td>' + row.itemDescription + '</td>' + '<td>' + row.inStock + '</td>' + 
+        '<td>' + row.committed + '</td>' + '<td>' + row.onOrder + '</td>' + '<td>' + 
+        row.available + '</td>' + '<td>' + row.warehouse + '</td>' + '</tr>';
+    }).join('');
+    };
+
+
+    load();
+</script>
+  <iframe width=750 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPldaEI-L0VnYiFfJwRtKgg47LlzYY-iaHUVUqK8BovGdNJ8EoKLVurMZ3tY8rGx_rhJHj0k-sb1K4/pubhtml"></iframe>
+</body>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        table
+        {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        table td
+        {
+            padding: 5px;
+        }
+    </style>
+</html>

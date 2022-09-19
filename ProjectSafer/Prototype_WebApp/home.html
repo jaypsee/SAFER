@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Home CMS - PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/plugins/morris/morris.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style2.css">		
+        <link rel="stylesheet" type="text/css" href="assets/css/form.css">		
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="homepage/index.html" class="logo">
+						<img src="assets/img/logo1.png" width="50" height="50" alt="">
+					</a>
+                </div>           
+                <div class="page-title-box pull-left">
+					<h3 onclick ="launchFullScreen(document.documentElement);">Project SAFER</h3>
+                </div>
+				<a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<ul class="nav navbar-nav navbar-right user-menu pull-right">
+					<li class="dropdown hidden-xs">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-purple pull-right">5</span></a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span>Notifications</span>
+							</div>
+							<div class="drop-scroll">
+								<ul class="media-list">
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">
+													<img alt="John Doe" src="assets/img/user.jpg" class="img-responsive img-circle">
+												</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">John Doe</span> accessed door at the <span class="noti-title">Computer Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">4 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Tarah Shropshire</span> changed the configuration of a device at <span class="noti-title">Office 1</span></p>
+												<p class="m-0"><span class="notification-time">6 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Misty Tison</span> posted a new <span class="noti-title">Blog Post</span></p>
+												<p class="m-0"><span class="notification-time">8 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">G</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Rolland Webber</span> turned on electricity at <span class="noti-title">Room 201</span></p>
+												<p class="m-0"><span class="notification-time">12 mins ago</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="media notification-message">
+										<a href="notifications.html">
+											<div class="media-left">
+												<span class="avatar">V</span>
+											</div>
+											<div class="media-body">
+												<p class="m-0 noti-details"><span class="noti-title">Bernardo Galaviz</span> activated alarm at the <span class="noti-title">Kitchen Laboratory</span></p>
+												<p class="m-0"><span class="notification-time">2 days ago</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="notifications.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-purple pull-right">1</span></a>
+					</li>		
+					<li class="dropdown">
+						<a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
+							<span class="user-img"><img class="img-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+							<span>Admin</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">My Profile</a></li>
+							<li><a href="edit-profile.html">Edit Profile</a></li>							
+							<li><a href="login.html">Logout</a></li>
+						</ul>
+					</li>
+				<div class="dropdown mobile-user-menu pull-right">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="edit-profile.html">Edit Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</div>					
+				</ul>
+            </div>
+			<div class="main-menu">
+				<div class="main-menu-inner slimscroll">
+					<div id="main-menu" class="main-menu">
+				<ul id="sul">
+					<section class="home">
+						<li >  
+							<section id="time"><i class="fa fa-clock-o"><a id="clock" class="clock"></a></i></section>
+						</li>		
+			
+						<li><a href="index.html" style="color:#00c5fb; font-weight:bold; background-color:#263238; padding: 7px 7px;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dash"> Dashboard</span> <span class="menu-arrow"></span></a></li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-camera"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Audiovisual Intercom</span> <span class="menu-arrow"></span></a>
+					  <ul class="list-unstyled" style="display: none;">
+						
+						<li><a href="cctv.html"> CCTV Surveillance</a></li>
+						<li><a href="https://chat-app-jsm-video.netlify.app/"> Video Conference</a></li>
+		>
+					  </ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-tasks"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Resource Management</span> <span class="menu-arrow"></span></a>
+					<ul class="list-unstyled" style="display: none;">
+						<li><a href="schedule.html"> Schedule</a></li>									
+						<li><a href="ems.html"> Energy</a></li>
+						<li><a href="facilities.html"> Facilities</a></li>									
+						<li><a href="control-panel.html"> Control Panel </a></li>
+					</ul>
+				 </li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;<span class="dash">Messages</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="inbox.html"> <span> Inbox </span> <span class="badge bg-primary pull-right">1</span></a></li>
+							<li><a href="notifications.html"> Notifications <span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="alerts.html"> Monitoring </a></li>
+							<li><a href="home.html" style="color:#00c5fb; font-weight:bold;"> Homepage </a></li>									
+						</ul>
+					</li>
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-code"></i>&nbsp;&nbsp;&nbsp; <span class="dash"> Reports and Analytics</span> <span class="menu-arrow"></span> </a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="user-act.html"> Users Activity Logs<span class="badge bg-primary pull-right">5</span></a></li>
+							<li><a href="sys-events.html"><span> Systems Event Logs</span></a></li>
+						</ul>
+					</li>
+			
+					<li id="sli" class="menu-item"><a href="#"><i class="fa fa-gear"></i>&nbsp;&nbsp;&nbsp;<span class="dash"> Configurations</span> <span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: none;">
+							<li><a href="users.html"> Users </a></li>
+							<li><a href="assets.html"> Assets </a></li>
+						</ul>
+					</li>	
+					</section>
+				</ul>
+			</div>
+			</div>
+			</div>
+			</div>
+					  <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<h4 class="page-title">Homepage Content Management</h4>                                                                
+						</div>
+						<div class="col-xs-20 text-right m-b-20">
+                            <form action="#" method="post" id="demoForm" class="demoForm">
+                                <fieldset>
+                                    <select name="area" class="textSelect">
+                                        <option value="Default">[Area]</option>
+                                        <option value="Area1">Gnd Flr</option>
+                                        <option value="Area2">2nd Flr</option>
+                                        <option value="Area3">3rd Flr</option>
+                                        <option value="Area4">4th Flr</option>
+                                        <option value="AreaEtc">Other Areas</option>                                                                 
+                                    </select>
+                                    <select name="facility" id="facility" class="textSelect" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+                                        <!-- populated using JavaScript -->
+                                    </select>                                    
+                                    <a href="alerts.html" class="button" style="margin-left:2em;">Alerts</a>&nbsp;
+							        <a href="control-panel.html"><img src="assets/img/control.png" width="40" height="40"></a>                                             
+                                </fieldset>                       
+                            </form>
+						</div>                        
+					</div><br>
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<table>
+								<td width="1000px" rowspan="5">
+									<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+										<div>
+											<label>Create News</label><label class="validation-error hide" id="contentNewsValidationError"></label>
+											<input type="text" name="contentNews" id="contentNews" value="TEXT">
+										</div>
+										<div class="form-action-buttons">
+											<input type="submit" id="contentNews" value="Save">
+										</div>
+									</form>
+								</td>
+							</table>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<table class="list" id="savedNews">
+								<thead>
+									<tr>
+										<th width="max">Saved News</th>
+										<th width="125px"></th>
+										<th width="115px"></th>
+									</tr>
+								</thead>
+								<tbody id="savedNews" name="savedNews">
+									<tr>
+										<td>The Student Council- Commission on Elections has released the calendar of activities in connection with the Central Student Council (CSC) Elections 2020.</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditNews(this)">Edit</a>
+                    	   					<a class="buttonAction" id="savedPosts" onClick="onDeleteNews(this)">Delete</a>									
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>
+									</tr>
+									<tr>
+										<td>Makiisa sa ating ONLINE FRESHMEN ORIENTATION ngayong October 5 - 6, 2020 at malaman ang iba't ibang impormasyon tungkol sa ating unibersidad at kursong napili.</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditNews(this)">Edit</a>
+                    	   					<a class="buttonAction" id="savedPosts" onClick="onDeleteNews(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>										
+									</tr>
+									<tr>
+										<td>Calling all creative PUPian artists! PHILIPPINE AIR FORCE will be having a YOUTH JOURNALISM CONTEST.</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditNews(this)">Edit</a>
+                    	   					<a class="buttonAction" id="savedPosts" onClick="onDeleteNews(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>										
+									</tr>
+									<tr>
+										<td>Welcome to PUP-Paranaque City Campus. Congratulations to the 1st batch of Freshmen ! </td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditNews(this)">Edit</a>
+                    	   					<a class="buttonAction" id="savedPosts" onClick="onDeleteNews(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>										
+									</tr>
+								</tbody>
+							</table>
+						</div>	
+					</div><br><br><br>	
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<table>
+								<td width="1000px" rowspan="5">
+									<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+										<div>
+											<label>Create Blog Post</label><label class="validation-error hide" id="contentNewsValidationError"></label>
+											<input type="text" name="contentPost" id="contentPost" value="TEXT">
+											<input type="file" name="contentPost" id="contentPost" value="Select Photo">										
+										</div>
+										<div class="form-action-buttons">
+											<input type="submit" id="contentPost" value="Save">
+										</div>
+									</form>
+								</td>
+							</table>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<table class="list" id="savedPosts">
+								<thead>
+									<tr>
+										<th width="max">Saved Blog Posts</th>
+										<th width="125px"></th>
+										<th width="115px"></th>
+									</tr>
+								</thead>
+								<tbody2 id="savedPosts" name="savedPosts">
+									<tr>
+										<td>PUP - Parañaque City Campus is now accepting all kinds of donation for the victims of typhoon Rolly and Typhoon Ulysses. Join our donation drive to help victims get back on their feet...<br><br>
+											<a href="homepage/images/post1.jpg"><img src="homepage/images/post1.jpg" height="80" width="60"></a>
+										</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>		
+									</tr>
+									<tr>
+										<td>To all PUP Parañaque Alumni from 2017-2019, <br><br> In line with the Alumni Relations Office and PUP Parañaque Student Affairs and Services Office, we are now conducting an Alumni Tracer Study to know the employability of our graduates of 2017-2019...<br><br>
+											<a href="homepage/images/post2.jpg"><img src="homepage/images/post2.jpg" height="80" width="60"></a>
+										</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr>
+									<tr>
+										<td>WATCH: Bilang bahagi ng pagdiriwang ng  PUP ng Kapaskuhan ngayong taon na may temang “Pasko sa PUP: Pagsasamahang Pinapanday ng Pagkakaisa, Pagbibigayan at Pagkalinga”... <br> https://fb.watch/25WbgYPI_n/<br><br>
+											<a href="homepage/images/post4.jpg"><img src="homepage/images/post4.jpg" height="80" width="60"></a>
+										</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr>
+									<tr>
+										<td>President's Lister Cash Incentive <br><br>Please be informed that the P1,000.00 cash incentive for the President’s Lister has been approved for release...<br><br>
+											<a href="homepage/images/post5.jpg"><img src="homepage/images/post5.jpg" height="80" width="60"></a>
+										</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr>
+									<tr>
+										<td>NEWS: For the first time, the Polytechnic University of the Philippines (PUP) team implementing the project LAMP (Loop-mediated isothermal amplification) Detection Assays for Anthracnose, Stem-end Rot, and Scab Disease Pathogens in Philippine ‘Carabao’ Mango”...<br><br>
+											<a href="homepage/images/post6.jpg"><img src="homepage/images/post6.jpg" height="80" width="60"></a>
+										</td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr>
+								</tbody2>
+							</table>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><br><br><br><br>
+							<table>
+								<td width="1000px" rowspan="5">
+									<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+										<div>
+											<label>Create Slide</label><label class="validation-error hide" id="contentNewsValidationError"></label>
+											<input type="text" name="contentNews" id="contentNews" value="SLIDE TITLE">
+											<input type="file" name="contentPost" id="contentPost" value="Select Photo">										
+										</div>
+										<div class="form-action-buttons">
+											<input type="submit" id="contentPost" value="Save">
+										</div>
+									</form>
+								</td>
+							</table>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<table class="list" id="savedPosts">
+								<thead>
+									<tr>
+										<th width="max">Saved Slides</th>
+										<th width="125px"></th>
+										<th width="115px"></th>
+									</tr>
+								</thead>
+								<tbody id="savedPosts" name="savedPosts">
+									<tr>
+										<td width="100%">Slide 1<br><br><a href="homepage/images/slider_img1.jpg"><img src="homepage/images/slider_img1.jpg" width="400" height="315"></a></td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr><br>
+									<tr>
+										<td>Slide 2<br><br><a href="homepage/images/slider_img2.jpg"><img src="homepage/images/slider_img2.jpg" width="400" height="315"></a></td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr><br>
+									<tr>
+										<td>Slide 3<br><br><a href="homepage/images/slider_img3.jpg"><img src="homepage/images/slider_img3.jpg" width="400" height="315"></a></td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr><br>
+									<tr>
+										<td>Slide 4<br><br><a href="homepage/images/slider_img4.jpg"><img src="homepage/images/slider_img4.jpg" width="400" height="315"></a></td>
+										<td>
+											<a class="buttonAction" id="savedPosts" onClick="onEditPost(this)">Edit</a>
+                       						<a class="buttonAction" id="savedPosts" onClick="onDeletePost(this)">Delete</a>
+										</td>
+										<td>
+											<div class="dropdown action-label">
+												<a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+													<li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+												</ul>
+											</div>											
+										</td>												
+									</tr><br>
+								</tbody>
+							</table>
+						</div>	
+					</div><br><br>							
+                </div>
+				<div class="notification-box">
+					<div class="msg-sidebar notifications msg-noti">
+						<div class="topnav-dropdown-header">
+							<span>Messages</span>
+						</div>
+						<div class="drop-scroll msg-list-scroll">
+							<ul class="list-box">
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Richard Miles </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item new-message">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">John Doe</span>
+												<span class="message-time">1 Aug</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Tarah Shropshire </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Mike Litorus</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Catherine Manseau </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">D</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Domenic Houston </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">B</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Buster Wigton </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">R</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Rolland Webber </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">C</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author"> Claire Mapes </span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">M</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Melita Faucher</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">J</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Jeffery Lalor</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">L</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Loren Gatlin</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="chat.html">
+										<div class="list-item">
+											<div class="list-left">
+												<span class="avatar">T</span>
+											</div>
+											<div class="list-body">
+												<span class="message-author">Tarah Shropshire</span>
+												<span class="message-time">12:28 AM</span>
+												<div class="clearfix"></div>
+												<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="chat.html">See all messages</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script src="assets/js/form.js"></script>
+		<script type="text/javascript" src="assets/js/form2.js"></script>
+    </body>

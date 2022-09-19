@@ -1,0 +1,365 @@
+<html>
+<head></head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-8">
+            <input id="searchfield" type="search" class="form-control" placeholder="Search...">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+            <table>
+                <thead>
+                <tr id="days">
+                    <td style="width: 40%"></td>
+                    <td style="width: 12%" class="text-center">
+                    <h6><b class="schedule-color pressable-day" id="1">Monday</b></h6>
+                    </td>
+                    <td style="width: 12%" class="text-center">
+                    <h6><b class="schedule-color pressable-day" id="2">Tuesday</b></h6>
+                    </td>
+                    <td style="width: 12%" class="text-center">
+                    <h6><b class="schedule-color pressable-day" id="3">Wednesday</b></h6>
+                    </td>
+                    <td style="width: 12%" class="text-center">
+                    <h6><b class="schedule-color pressable-day" id="4">Thursday</b></h6>
+                    </td>
+                    <td style="width: 12%" class="text-center">
+                    <h6><b class="schedule-color pressable-day" id="5">Friday</b></h6>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td></td>
+                    <td class="text-center">
+                    <h6 class="schedule-color"><b data-id="count1">7 / 10</b></h6>
+                    </td>
+                    <td class="text-center">
+                    <h6 class="schedule-color"><b data-id="count2">2 / 10</b></h6>
+                    </td>
+                    <td class="text-center">
+                    <h6 class="schedule-color"><b data-id="count3">4 / 10</b></h6>
+                    </td>
+                    <td class="text-center">
+                    <h6 class="schedule-color"><b data-id="count4">5 / 10</b></h6>
+                    </td>
+                    <td class="text-center">
+                    <h6 class="schedule-color"><b data-id="count5">3 / 10</b></h6>
+                    </td>
+                </tr>
+                </thead>
+
+                <tbody class="searchable">
+                <tr class="row-border">
+                    <td>
+                    <h4>John Johnson</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Bo Johanson</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Bjorn Sorensen</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Sigurd Gabriel</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Jesper Christensen</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Nikiti Hansen</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Martin Hansen</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Joshua Bush</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Bill Billsen</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="5"></span>
+                    </td>
+                </tr>
+
+                <tr class="row-border">
+                    <td>
+                    <h4>Terkil Ingren</h4>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="1"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="2"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking" data-schedule="3"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="4"></span>
+                    </td>
+                    <td class="text-center">
+                    <span class="glyphicon glyphicon-ok booking active" data-schedule="5"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <footer class="text-center">
+        <p>&copy; 2016 - <a href="http://caveofcode.com" target="_blank">Cave of Code</a></p>
+    </footer>
+    <style>
+        table {
+        width: 100%;
+        }
+
+        #searchfield {
+        margin-bottom: 10px;
+        margin-top: 15px;
+        padding-right: 5%
+        }
+
+        .pressable-day {
+        padding: 10px 20px 10px 20px;
+        cursor: pointer;
+        }
+
+        .pressable-day.active {
+        background-color: forestgreen;
+        color: white;
+        border-radius: 50px;
+        }
+
+        .schedule-color {
+        color: forestgreen;
+        }
+
+        .row-border {
+        border-bottom-width: 0.1em;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(192, 192, 192, 1.0)
+        }
+
+        h4 {
+        line-height: 2em;
+        color: black;
+        text-decoration: underline;
+        }
+
+        .booking.glyphicon-ok {
+        font-size: 2em;
+        color: forestgreen;
+        opacity: 0.1;
+        }
+
+        .booking.glyphicon-ok.active {
+        opacity: 1;
+        }
+    </style>
+    <script>
+        $(function() {
+        $('#searchfield').keyup(filter);
+
+        $('.pressable-day').click(function() {
+            $(this).toggleClass('active');
+
+            filter();
+        });
+
+        function filter() {
+            var rex = new RegExp($('#searchfield').val(), 'i');
+            var rows = $('.searchable tr');
+
+            rows.hide();
+
+            rows.filter(function() {
+
+            var tester = true;
+
+            tester = rex.test($(this).text());
+
+            tester = tester && filterOnDays(this);
+
+            return tester;
+            }).show();
+        }
+
+        function filterOnDays(selector) {
+            var tester = true;
+            var all = $('#days .pressable-day.active');
+
+            for (var i = 0; i < all.length; i++) {
+            var day = $(selector).find('[data-schedule="' + all[i].id + '"]');
+
+            if (!day.hasClass('active')) {
+                tester = false;
+            }
+            }
+            return tester;
+        }
+        });
+    </script>
+</body>
+</html>

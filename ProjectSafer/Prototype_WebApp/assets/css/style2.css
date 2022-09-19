@@ -1,0 +1,855 @@
+h1 {
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #06D85F;
+    margin: 80px 0;
+}
+
+.box {
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #0684d8;
+    vertical-align: center;
+}
+
+.button:hover {
+    background: #0b37b3;
+}
+
+.buttonPrev {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #F1F1F1;
+    border-width: 1px;
+    border-color: #efefef;
+}
+
+.buttonPrev:hover {
+    background: #bbbdbf;
+}
+
+.buttonStart {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #0377fc;
+    border-width: 1px;
+    border-color: #555555
+}
+
+.buttonStart:hover {
+    background: #0b37b3;
+}
+
+.buttonStop {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #f52323;
+    border-width: 1px;
+    border-color: #cccccc
+}
+
+.buttonStop:hover {
+    background: #700303;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(245, 2, 2);
+    border-radius: 5px;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    transform: translate(11%, 10%);
+}
+
+.popup .title {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .message {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.announce {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(0, 102, 255);
+    border-radius: 5px;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    transform: translate(11%, 10%);
+}
+
+.announce .title {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.announce .message {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.announce .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+input.switch:empty {
+    margin-left: -9999px;
+}
+
+input.switch:empty~label {
+    position: relative;
+    float: left;
+    line-height: 1.6em;
+    text-indent: 4em;
+    margin: 0.2em 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.switch:empty~label:before,
+input.switch:empty~label:after {
+    max-height: 18px;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    width: 3.6em;
+    background-color: #bbbdbf;
+    border-radius: 0.3em;
+    box-shadow: inset 0 0.2em 0 rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+}
+
+input.switch:empty~label:after {
+    max-height: 18px;
+    width: 1.4em;
+    top: 0.1em;
+    bottom: 0.1em;
+    margin-left: 0.1em;
+    background-color: #fff;
+    border-radius: 0.15em;
+    box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.2);
+}
+
+input.switch:checked~label:before {
+    background-color: #0377fc;
+}
+
+input.switch:checked~label:after {
+    margin-left: 2em;
+}
+
+.switchLabel {
+    font: 11px Arial, sans-serif;
+    color: #242424;
+}
+
+.label {
+    font: 15px Arial, sans-serif;
+    color: #505052;
+}
+
+.textSelect {
+    font: 13px Montserrat, sans-serif;
+    color: #505052;
+    width: 17%;
+    height: 100%;
+    padding: 9px 10px;
+    box-sizing: border-box;
+    border-color: #dddddd;
+    border-width: 1px;
+    vertical-align: center;
+    line-height: 35px;
+}
+
+
+/* Style the tab */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tab button.visited {
+    background-color: inherit;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#container {
+    margin: 0px;
+    width: 100%;
+    height: 220px;
+    border: 1px #333 solid;
+}
+#container1 {
+    margin: 0px;
+    width: 100%;
+    height: 520px;
+    border: 1px #333 solid;
+}
+#videoConference {
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+}
+#videoElement1 {
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+}
+
+#videoElement2 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement3 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement4 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement5 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement6 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+b {
+    font: 13px Montserrat, sans-serif;
+    font-weight: bold;
+    color: #009CE7;
+}
+
+.facility {
+    font: 13px Montserrat, sans-serif;
+    font-weight: bold;
+    color: black
+}
+
+.buttonOptions {
+    width: 30px;
+    height: 35px;
+    text-align: center;
+    padding: 0px;
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60px;
+    height: 36px;
+}
+
+.clock {
+    font: 13px Montserrat, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggleIcon {
+    width: 20px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.puppq {
+    font: 18px Montserrat, sans-serif;
+    color: #FFFFFF;
+    text-align: left;
+    vertical-align: center;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.alertAreaLabel {
+    font: 12px Montserrat, sans-serif;
+    color: black;
+    text-align: center;
+    vertical-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.readingValue {
+    font: 20px Montserrat, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    vertical-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttonAction {
+    width: 160px;
+    font-size: 0.75em;
+    padding: 5px 12px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #efefef;
+    border-width: 1px;
+    border-color: #fefefe;
+}
+
+.buttonAction:hover {
+    background: #CCCCCC;
+     h1 {
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #06D85F;
+    margin: 80px 0;
+}
+
+.box {
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #0684d8;
+    vertical-align: center;
+}
+
+.button:hover {
+    background: #0b37b3;
+}
+
+.buttonPrev {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #F1F1F1;
+    border-width: 1px;
+    border-color: #efefef;
+}
+
+.buttonPrev:hover {
+    background: #bbbdbf;
+}
+
+.buttonStart {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #0377fc;
+    border-width: 1px;
+    border-color: #555555
+}
+
+.buttonStart:hover {
+    background: #0b37b3;
+}
+
+.buttonStop {
+    width: 160px;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #f52323;
+    border-width: 1px;
+    border-color: #cccccc
+}
+
+.buttonStop:hover {
+    background: #700303;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(245, 2, 2);
+    border-radius: 5px;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    transform: translate(11%, 10%);
+}
+
+.popup .title {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .message {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.announce {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(0, 102, 255);
+    border-radius: 5px;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    transform: translate(11%, 10%);
+}
+
+.announce .title {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.announce .message {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.announce .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+input.switch:empty {
+    margin-left: -9999px;
+}
+
+input.switch:empty~label {
+    position: relative;
+    float: left;
+    line-height: 1.6em;
+    text-indent: 4em;
+    margin: 0.2em 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.switch:empty~label:before,
+input.switch:empty~label:after {
+    max-height: 18px;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    width: 3.6em;
+    background-color: #bbbdbf;
+    border-radius: 0.3em;
+    box-shadow: inset 0 0.2em 0 rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+}
+
+input.switch:empty~label:after {
+    max-height: 18px;
+    width: 1.4em;
+    top: 0.1em;
+    bottom: 0.1em;
+    margin-left: 0.1em;
+    background-color: #fff;
+    border-radius: 0.15em;
+    box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.2);
+}
+
+input.switch:checked~label:before {
+    background-color: #0377fc;
+}
+
+input.switch:checked~label:after {
+    margin-left: 2em;
+}
+
+.switchLabel {
+    font: 11px Arial, sans-serif;
+    color: #242424;
+}
+
+.label {
+    font: 15px Arial, sans-serif;
+    color: #505052;
+}
+
+.textSelect {
+    font: 13px Montserrat, sans-serif;
+    color: #505052;
+    width: 17%;
+    height: 100%;
+    padding: 9px 10px;
+    box-sizing: border-box;
+    border-color: #dddddd;
+    border-width: 1px;
+    vertical-align: center;
+    line-height: 35px;
+}
+
+
+/* Style the tab */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tab button.visited {
+    background-color: inherit;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#container {
+    margin: 0px;
+    width: 100%;
+    height: 220px;
+    border: 1px #333 solid;
+}
+
+#videoElement1 {
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+}
+
+#videoElement2 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement3 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement4 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement5 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+#videoElement6 {
+    width: 100%;
+    height: 220px;
+    background-color: #666;
+}
+
+b {
+    font: 13px Montserrat, sans-serif;
+    font-weight: bold;
+    color: #009CE7;
+}
+
+.facility {
+    font: 13px Montserrat, sans-serif;
+    font-weight: bold;
+    color: black
+}
+
+.buttonOptions {
+    width: 30px;
+    height: 35px;
+    text-align: center;
+    padding: 0px;
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60px;
+    height: 36px;
+}
+
+.clock {
+    font: 13px Montserrat, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggleIcon {
+    width: 20px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.puppq {
+    font: 18px Montserrat, sans-serif;
+    color: #FFFFFF;
+    text-align: left;
+    vertical-align: center;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.alertAreaLabel {
+    font: 12px Montserrat, sans-serif;
+    color: black;
+    text-align: center;
+    vertical-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.readingValue {
+    font: 20px Montserrat, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    vertical-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttonAction {
+    width: 160px;
+    font-size: 0.75em;
+    padding: 5px 12px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #efefef;
+    border-width: 1px;
+    border-color: #fefefe;
+}
+
+.buttonAction:hover {
+    background: #CCCCCC;
+}

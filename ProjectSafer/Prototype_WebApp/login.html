@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
+        <title>Login | PUPPQ Smart BMS</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+			<div class="account-page">
+				<div class="container">
+					<h6 class="account-title">Smart Building Management System</h6>								
+					<div class="account-box">
+						<div class="account-wrapper">
+							<div style="text-align: center;">
+								<a href="homepage/index.html"><img src="assets/img/logo_pup.jpg" width="170" height="100" alt="Home"></a>
+							</div><br>
+							<form action="index.html" name="login">
+								<div class="form-group form-focus">
+									<label class="control-label">Username or Email</label>
+									<input class="form-control floating" type="text" name="userid">
+								</div>
+								<div class="form-group form-focus">
+									<label class="control-label">Password</label>
+									<input class="form-control floating" type="password" name="pswrd">
+								</div>
+								<div class="form-group text-center">
+									<input class="btn btn-primary btn-block account-btn" type="button" onclick="check(this.form)" value="Login">
+								</div>
+								<div class="text-center">
+									<a href="profile.html">Forgot your password?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+		<script language="javascript">
+			function check(form)/*function to check userid & password*/
+			{
+			/*the following code checkes whether the entered userid and password are matching*/
+			if(form.userid.value == "admin" && form.pswrd.value == "mypswrd")
+				{
+					window.location.replace('index.html')/*opens the target page while Id & password matches*/
+				}
+			else if(form.userid.value == "user" && form.pswrd.value == "mypswrd")
+				{
+					window.location.replace('user-profile.html')/*opens the target page while Id & password matches*/
+				}			
+			else
+				{
+				alert("Invalid Password or Username")/*displays error message*/
+				}
+			}
+		</script>
+    </body>
+</html>
